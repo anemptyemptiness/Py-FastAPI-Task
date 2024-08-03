@@ -45,3 +45,7 @@ ALGORITHM=ALGORITHM
 ``` terminal
 docker compose up --build
 ```
+После запуска приложения его можно открыть в браузере по следующему адресу:
+```
+http://localhost:7777
+```
