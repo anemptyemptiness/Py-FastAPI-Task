@@ -1,15 +1,14 @@
+from fastapi import Depends, Form, Request
 from jwt import InvalidTokenError
 
-from fastapi import Depends, Form, Request
-
+import app.auth.utils as auth_utils
 from app.exceptions.auth_exceptions import (
-    UnAuthedUserException,
-    UserNotFoundException,
     InvalidTokenException,
+    UnAuthedUserException,
+    UserNotFoundException
 )
 from app.users.dao import UserDAO
 from app.users.schemas import UserSchema
-import app.auth.utils as auth_utils
 
 
 def get_current_token_payload(

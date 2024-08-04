@@ -1,6 +1,6 @@
-from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy.dialects.postgresql import ARRAY, INTEGER, JSON
 from sqlalchemy import ForeignKey
+from sqlalchemy.dialects.postgresql import ARRAY, INTEGER, JSON
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
 

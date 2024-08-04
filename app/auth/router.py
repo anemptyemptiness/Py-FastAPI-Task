@@ -1,12 +1,12 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Response, Body, Depends
+from fastapi import APIRouter, Body, Depends, Response
 
+import app.auth.utils as auth_utils
 from app.auth.helpers import validate_auth_user
 from app.auth.schemas import TokenInfo
 from app.exceptions.auth_exceptions import UserAlreadyRegisteredException
 from app.users.dao import UserDAO
-import app.auth.utils as auth_utils
 from app.users.schemas import UserSchema
 
 router = APIRouter(

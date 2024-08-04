@@ -1,10 +1,10 @@
-from sqlalchemy import select, update, delete, and_, func, union, any_, exists
+from sqlalchemy import and_, any_, delete, func, select, union, update
 from sqlalchemy.dialects.postgresql import insert
 
 from app.database import async_session
 from app.todo_list.models import Task
-from app.users.models import User
 from app.todo_list.schemas import TaskUpdateSchema
+from app.users.models import User
 
 
 class TaskDAO:

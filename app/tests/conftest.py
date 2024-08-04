@@ -1,14 +1,13 @@
 import asyncio
 
 import pytest
+from httpx import ASGITransport, AsyncClient
 
+from app.__main__ import app as fastapi_app
 from app.config import settings
 from app.database import Base, async_session, engine
 from app.todo_list.models import Task  # noqa
 from app.users.models import User  # noqa
-from app.__main__ import app as fastapi_app
-
-from httpx import AsyncClient, ASGITransport
 
 
 @pytest.fixture(scope="function", autouse=True)

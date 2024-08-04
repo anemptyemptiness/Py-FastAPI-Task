@@ -1,13 +1,17 @@
 from typing import Annotated
 
+from fastapi import APIRouter, Depends, Path, Query
 from pydantic import TypeAdapter
-from fastapi import APIRouter, Query, Path, Depends
 
 from app.auth.helpers import get_current_user
-from app.exceptions.todo_list_exceptions import TaskNotFound, NoOneModifiedTask, NotEnoughRightsException
+from app.exceptions.todo_list_exceptions import (
+    NoOneModifiedTask,
+    NotEnoughRightsException,
+    TaskNotFound
+)
 from app.exceptions.user_exceptions import UserNotFound
 from app.todo_list.dao import TaskDAO
-from app.todo_list.schemas import TaskUpdateSchema, TaskSchema
+from app.todo_list.schemas import TaskSchema, TaskUpdateSchema
 from app.users.dao import UserDAO
 from app.users.schemas import UserSchema
 
